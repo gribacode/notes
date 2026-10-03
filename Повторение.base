@@ -1,0 +1,23 @@
+filters:
+  and:
+    - file.ext == "md"
+    - not:
+        - file.inFolder("Шаблоны")
+views:
+  - type: table
+    name: На сегодня
+    filters:
+      and:
+        - 'note["повтор"] <= today()'
+    order:
+      - file.name
+      - note.статус
+      - note.повтор
+  - type: table
+    name: Черновики
+    filters:
+      and:
+        - 'note["статус"] == "черновик"'
+    order:
+      - file.name
+      - note.создан

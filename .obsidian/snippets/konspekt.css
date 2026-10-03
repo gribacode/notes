@@ -1,0 +1,27 @@
+/* Цвет несет смысл: фиолетовый это вопрос для повторения,
+   оранжевый это ловушка, красный это непроверенный факт. */
+
+body {
+  --line-width: 42rem;
+  --file-line-width: 42rem;
+}
+
+.callout[data-callout="question"] {
+  --callout-color: 130, 80, 223;
+}
+
+.callout[data-callout="warning"] {
+  --callout-color: 224, 130, 30;
+}
+
+/* Свернутый вопрос выглядит как карточка: ответ не виден, пока не раскроешь. */
+.callout.is-collapsed[data-callout="question"] {
+  border-left: 3px solid rgb(var(--callout-color));
+}
+
+/* Тег #проверить в режиме чтения и в редакторе. */
+a.tag[href="#проверить"],
+.cm-hashtag.cm-tag-проверить {
+  color: var(--text-on-accent);
+  background-color: rgb(220, 60, 60);
+}
